@@ -4,14 +4,15 @@
 \LoadClass[a4paper,11pt]{ltjsarticle}
 
 \RequirePackage{plautopatch}
-% \plautopatchdisable{eso-pic}
 
 \usepackage{subfiles}
-\usepackage{listings}
+\usepackage{listings,jvlisting}
 \usepackage{plistings}
 \usepackage{color}
-% \usepackage[dvipdfmx]{graphicx}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{float}
 \usepackage[hyphens]{url}
 \urlstyle{same}
 \usepackage{siunitx}
@@ -19,13 +20,10 @@
 \usepackage{paralist}
 \usepackage{amsmath,amssymb}
 \usepackage{mathtools}
-% \usepackage{times}
-\usepackage[newfloat]{minted}
+\usepackage{physics}
 \usepackage[hang,small,bf,labelsep=space]{caption}
 \usepackage[subrefformat=parens]{subcaption}
-% \usepackage[dvipdfmx]{hyperref}
 \usepackage{hyperref}
-% \usepackage{pxjahyper}
 \usepackage{framed}
 \usepackage{type1cm}
 \usepackage[truedimen,margin=25truemm]{geometry}
@@ -34,17 +32,22 @@
 \addbibresource{references.bib}
 \captionsetup{compatibility=false}
 
+% newfloatパッケージの読み込み
+\usepackage{newfloat}
+
+% 新しいフローティング環境 `codeblock` を定義
+\DeclareFloatingEnvironment[
+    fileext=los,
+    listname={List of Code Blocks},
+    name=Code Block,
+    placement=!ht
+]{codeblock}
 
 \newcommand{\code}[1]{\texttt{#1}}
 \renewcommand{\thesection}{\arabic{section}.}
 \renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
 \renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
 
-
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{4}
 
-\renewcommand{\figurename}{\normalsize Fig.}
-\renewcommand{\tablename}{\normalsize Table}
-
-\SetupFloatingEnvironment{listing}{name=Code.}
