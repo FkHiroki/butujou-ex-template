@@ -26,4 +26,24 @@
       ],
       "description": "figure template"
     },
+  "table template": {
+      "prefix": "table",
+      // "scope": "text.tex.latex",
+      "body": [
+        "\\begin{table}[H]",
+        "    \\centering",
+        "    \\caption{${1:caption}}",
+        "    \\label{tab:${2:label}}",
+        "    \\begin{tabular}{${3:cc}}",
+        "        \\hline",
+        "        ${4:header} \\\\",
+        "        \\hline \\hline",
+        "        ${5:content} \\\\",
+        "        \\hline",
+        "    \\end{tabular}",
+        "\\end{table}"
+      ],
+      "description": "table template"
+    },
 }
+

@@ -31,6 +31,7 @@
 \usepackage[backend=biber,style=ieee]{biblatex}
 \addbibresource{references.bib}
 \captionsetup{compatibility=false}
+\usepackage{longtable}
 
 % newfloatパッケージの読み込み
 \usepackage{newfloat}
