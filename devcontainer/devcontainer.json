@@ -1,0 +1,17 @@
+{
+    "name": "LaTeX",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop",
+                "mhutchie.git-graph"
+            ]
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workdir,type=bind",
+    "workspaceFolder": "/workdir",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+}
